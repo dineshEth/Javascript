@@ -4,8 +4,75 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bg Changer</title>
+
+    <style>
+        body{
+            box-sizing: border-box;
+            background-color: #212121;
+            color: #fff;
+            width: 100vw;
+            height: 100vh;
+            margin: auto;
+            padding: 1rem;
+            text-align: center;
+        }
+        .bg{
+            width: 100px;
+            height: 100px;
+            border: 2px solid black;
+        }
+        .colors{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem ;
+        }
+        #violet{
+            background-color: #8222b6;
+        }
+        #blue{
+            background-color: #1f40d3;
+        }
+        #white{
+            background-color: #f9f9f9;
+        }
+        #green{
+            background-color: #18d3a5;
+        }
+        #black{
+            background-color: #191919;
+        }
+        .description{
+            font-size: 2rem;
+        }
+    </style>
 </head>
 <body>
-    <h1>Bg Chnager</h1>
+    <h1>Bg Changer</h1>
+
+    <div class="colors">
+        <div id="violet" class=" button bg ">
+            
+        </div>
+        <div id="blue"  class=" button bg ">
+            
+        </div>
+        <div id="green" class=" button bg ">
+            
+        </div>
+        <div id="white" class=" button bg ">
+            
+        </div>
+        <div id="black" class=" button bg ">
+            
+        </div>
+    </div>
+
+    <p class="description">Try clicking on one of the colors  above to chnage the background color of this page!</p>
+    
 </body>
+<script src="./index.js" lang="en">
+
+</script>
 </html>
