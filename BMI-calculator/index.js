@@ -52,6 +52,6 @@ form.addEventListener('submit',(e) => {
 
 function BmiCalculator(height, weight){
     if(height == null || weight == null) return;
-    let result = height / weight;
+    let result = (weight / ((height*height)/10000)).toFixed(2);   // upto 2 decimal places
     return result;
 }
