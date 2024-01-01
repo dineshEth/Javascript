@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Page</title>
+    <style>
+        a{
+            text-decoration-line: none;
+            color: inherit;
+        }
+        ul{
+            list-style: none;
+        }
+        body{
+            box-sizing: border-box;
+            background-color: #212121;
+            color: #fff;
+            width: 100vw;
+            height: 100vh;
+            margin: auto;
+            padding: 1rem;
+        }
+        .nav{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .list{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            gap: .3rem 1rem;
+        }
+        .youtube{
+            color: red;
+            font-size: 1.5rem;
+            padding: .5rem;
+            border: 1px solid red;
+            border-radius: 4px;
+        }
+        .projects__links{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: start;
+            gap: 1rem 2rem;
+        }
+        .heading-seondary{
+            /* background: gray; */
+        }
+        .bg-gray{
+            background: gray;
+            padding: .5rem;
+            border-radius: 4px;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <h1 class="heading">Projects</h1>
+        <ul class="list">
+            <li class="list-items">Home</li>
+            <li class="list-items">About</li>
+            <li class="list-items">Portfolio</li>
+            <li class="list-items">Blog</li>
+            <li class="list-items">Contact Us</li>
+        </ul>
+        <a href="http://www.youtube.com/" class="youtube">Youtube</a>
+    </nav>
+
+    <div class="projects__links">
+        <a class="bg-gray" href="http://" target="_blank" rel="noopener noreferrer">
+            <span class="heading-secondary">Background Changer</span>
+        </a>
+        
+        <a class="bg-gray" href="./Bg-changer/index.html" target="_self" rel="noopener noreferrer">
+            <span class="heading-secondary">BMI Calculator</span>
+        </a>
+        
+        <a class="bg-gray" href="http://" target="_blank" rel="noopener noreferrer">
+            <span class="heading-secondary">Auction</span>
+        </a>
+        
+        <a class="bg-gray" href="http://" target="_blank" rel="noopener noreferrer">
+            <span class="heading-secondary">Background Changer</span>
+        </a>
+    </div>
+
+</body>
+</html>
