@@ -1,5 +1,7 @@
 <h1>Background Changer</h1>
 
+<h2>Solution code </h2>
+
 ```Javascript
     console.log("Background Changer Js code");
 
