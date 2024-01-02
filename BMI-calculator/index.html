@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+
+    <style>
+        body{
+            box-sizing: border-box;
+            background-color: #212121;
+            color: #fff;
+            width: 100vw;
+            height: 100vh;
+            margin: auto;
+            padding: 1rem;
+        }
+        .heading{
+            font-size: 2rem;
+        }
+        input{
+            padding: .2rem 1rem;
+            color: black;
+            outline: none;
+            border-radius: 4px;
+        }
+        p,h3,label,input{
+            font-size: 1.5rem;
+        }
+        #results{
+            font-size: 2rem;
+            color: blue;
+        }
+        button{
+            background-color: #5d5c5d;
+            padding: .4rem 1rem;
+            border-radius: 4px;
+            outline: none;
+            color: white;
+            font-size: 1.5rem;
+            border: 1px solid white;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="heading">BMI Calculator</h1>
+
+    <form action="">
+        <p>
+            <label for=""> Height in CM : </label> 
+            <input type="text" id="height">
+        </p>
+        <p>
+            <label for=""> Weight in KG : </label> 
+            <input type="text" id="weight">
+        </p>
+        <button type="submit">Calculate</button>
+        <div id="results"></div>
+        <div id="weight-guide">
+            <h3> BMI Weight Guide</h3>
+            <p class="index" id="underweight">Under Weigth = Less than 18.6</p>
+            <p class="index" id="normal">Normal Range = 18.6 to 24.9</p>
+            <p class="index" id="overweight">Over Weigth = greater than 24.9</p>
+        </div>
+    </form>
+</body>
+<script src="./index.js"></script>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number-Guess Game</title>
+    <style>
+        body{
+            box-sizing: border-box;
+            background-color: #333333;
+            color: #fff;
+            width: 100vw;
+            margin: auto;
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: start;
+            align-items: center;
+            overflow-x: hidden;
+
+        }
+        .heading{
+                font-size: 4rem;
+            }
+        .description{
+                font-size: 1.5rem;
+            }
+        .highlight{
+            font-size: 2rem;
+            color: rgb(29, 159, 224);
+            font-weight: 900;
+        }
+        .bg{
+            background: #222222;
+            padding: .2rem;
+            border-radius: 10px;
+        }
+        .header{
+            display: flex;
+            flex-direction: column;
+            width: 60%;
+            justify-content:start;
+            align-items: center;
+        }
+        .container{
+            display: flex;
+            flex-direction: column;
+            justify-content:start;
+            align-items: center;
+            padding: 10px;
+            border-radius: 4px;
+            gap: 2rem 1rem;
+
+            input{
+                width: 10rem;
+                font-size: 1.5rem;
+                padding: 1rem;
+                border: none;
+                outline: none;
+                border-radius: 2px;
+                /* height: ; */
+            }
+            button,.button{
+                text-align: center;
+                width: 15rem;
+                padding: .5rem;
+                font-size: 1.5rem;
+                text-transform: capitalize;
+                background: rgb(5, 5, 5);
+                border: none;
+                color: white;
+                border-radius: 2px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1 class="heading">Number Guessing Game</h1>
+        <p class="description">
+            You need to guess a number between 1 to 100, after you guess put it into a input box available on the screen.You have 10 trials to guess correct number. If your guess correct number in 10 trails, you WIN.
+            You can play this game any number of times.
+        </p>
+    </div>
+    
+
+    <div id="container" class="container">
+        <input id="userNumber" type="text" placeholder="Your number">
+        <button id="submit" >submit</button>
+
+        <div class="bg">
+            <span class="description">Previous: </span>
+            <span id="prevGuess" class="trials">
+            </span>
+        </div>
+        <div class="description" id="message"></div>
+        <div class="bg">
+            <span class="description">RemainingTrials :</span>
+            <span id="remainingTrials" class="description">10</span>
+        </div>
+    </div>
+</body>
+<script src="./index.js"></script>
+</html>
