@@ -87,8 +87,8 @@ function newGame() {
     const newGameButton = document.querySelector('#newGame');
         newGameButton.addEventListener('click',(e)=>{
         play= true;
-        displayMessage("")
         prevTrail.innerHTML =''
+        displayMessage("")
         let ele = document.getElementById('container');
         ele.removeChild(document.querySelector("#lose"));
         remainingTrails.innerHTML = `${10}`

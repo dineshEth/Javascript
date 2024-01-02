@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bg Changer</title>
+
+    <style>
+        body{
+            box-sizing: border-box;
+            color: #fff;
+            background-color: rgb(59, 59, 59);
+            width: 100vw;
+            margin: auto;
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        .header{
+            display: flex;
+            flex-direction: column;
+            width: 60%;
+            justify-content:start;
+            align-items: center;
+        }
+        .heading{
+                font-size: 4rem;
+            }
+        .description{
+                font-size: 1.5rem;
+            }
+        .colorName{
+            margin: 1rem 0;
+            padding: .5rem 1rem;
+            background: orange;
+            width: 15rem;
+
+        }
+        button{
+                text-align: center;
+                width: 15rem;
+                padding: .5rem;
+                font-size: 1.5rem;
+                text-transform: capitalize;
+                background: rgb(5, 5, 5);
+                border: none;
+                color: white;
+                border-radius: 8px;
+            }
+
+        .colorName{
+            text-align: center;
+            width: 15rem;
+            padding: .5rem;
+            font-size: 1.5rem;
+            color: black;
+            }
+        
+    </style>
+</head>
+<body>
+    <div class="header">
+        <p class="heading">Random Color Generator</p>
+        <p class="description">Random Color Gener</p>
+    </div>
+    <button id="generate" class="description">Generate Color</button>
+    <div id="colorName" class="colorName">A Random Color Generator is a tool that generates and displays random colors, often in hexadecimal. It is used for creative projects, design inspiration, or adding dynamic and varied color schemes to web applications and interfaces.</div>
+
+    <p class="description">Try clicking on Generate button to generate random color, this color will change the background</p>
+    
+</body>
+<script src="./index.js" lang="en">
+
+</script>
+</html>
