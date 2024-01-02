@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stop Watch - Timer</title>
+    <style>
+        body{
+            box-sizing: border-box;
+            color: #fff;
+            background-color: rgb(59, 59, 59);
+            width: 100vw;
+            margin: auto;
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        .header{
+            display: flex;
+            flex-direction: column;
+            width: 60%;
+            justify-content:start;
+            align-items: center;
+        }
+        .heading{
+                font-size: 4rem;
+            }
+        .description{
+                font-size: 1.5rem;
+            }
+
+        button{
+                text-align: center;
+                width: 15rem;
+                padding: .5rem;
+                font-size: 1.5rem;
+                text-transform: capitalize;
+                background: rgb(5, 5, 5);
+                border: none;
+                color: white;
+                border-radius: 8px;
+            }
+        .buttons{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            /* grid-template-rows: 1fr 1fr 1fr; */
+            gap: 1rem;
+        }
+        
+            .timer{
+                border-radius: 1rem;
+                margin: 1rem 0;
+                padding: .5rem 1rem;
+                background: orange;
+                text-align: center;
+                padding: .5rem;
+                font-size: 4rem;
+                color: black;
+            }
+
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1 class="heading">Timer</h1>
+        <p class="description">A Timer and Stopwatch app enables users to measure time intervals with precision. Whether tracking elapsed time or setting countdowns, it's a versatile tool for managing tasks, workouts, or events. Enhance productivity and organization with this time-management essential.</p>
+    </div>
+    <div class="container">
+        <div id="timer" class="timer">
+            <span id="min">00</span>
+            <span class="colon">:</span>
+            <span id="sec">00</span>
+        </div>
+        <div class="buttons">
+            <button id="start">Start</button>
+            <button id="stop">Stop</button>
+            <button id="reset">Reset</button>
+        </div>
+    </div>
+</body>
+<script src="./index.js"></script>
+</html>
