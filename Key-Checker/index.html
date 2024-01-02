@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Key Checker</title>
+    <style>
+        body{
+            box-sizing: border-box;
+            background-color: #373636;
+            color: #fff;
+            width: 100vw;
+            margin: auto;
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: start;
+            align-items: center;
+            overflow-x: hidden;
+        }
+        .heading{
+                font-size: 4rem;
+            }
+        .description{
+                font-size: 1.5rem;
+            }
+        .header{
+            text-align: center;
+        }
+
+        table,th,td{
+            border: 1px solid orange;
+            background-color: black;
+            
+        }
+        th,td{
+            font-size: 1.5rem;
+            padding: .5rem;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1 id="heading" class="heading">Key Checker</h1>
+        <p class="description">Check key code and key name you press on your keyboard</p>
+    </div>
+    <div id="container" class="container">
+        <div>Press any key and see the magic</div>
+    </div>
+</body>
+<script src="./app.js"></script>
+</html>
