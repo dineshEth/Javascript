@@ -99,3 +99,28 @@
 // .catch(err=>{
 //     console.error(err)
 // })
+
+
+/*** Promise Based APIs using async and await  */
+
+// function alarm(name,delay){
+//     return new Promise((resolve,reject)=>{
+//         if(delay < 0){
+//             throw new Error("dalay must not be negative");
+//         }
+//         setTimeout(()=>{
+//             resolve(`Wake up,${name}`);
+//         },delay);
+//     });
+// }
+
+// async function setAlarm(name, delay){
+//     try {
+//         const message = await alarm(name,delay);
+//         console.log(message);
+//     } catch (error) {
+//         console.error(`Fail : ${error}`)
+//     }
+// }
+
+// setAlarm("Dinesh",2000);
