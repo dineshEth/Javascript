@@ -7,22 +7,101 @@
 body{
     background: #212121;
     color: #ffff;
-    /* padding: 1rem; */
     margin: 0.2rem 1rem;
 }
 
 .header{
     display: flex;
     flex-direction: column;
-    /* width: 60%; */
     justify-content:start;
     align-items: center;
 }
 
 .title{
     font-size: 4rem;
-    /* text-align: center; */
 }
+
 .description{
     font-size: 2rem;
+}
+
+.main{
+    margin-top: 4rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    
+    .btn__box{
+        display: flex;
+        flex-direction: column;
+        justify-content:start;
+        gap: .5rem;
+
+        .select__option{
+            width: 100%;
+            font-size: 2rem;
+            padding: 0.2rem 1.2rem;
+            border-radius: 0.2rem;
+            color: #ffff;
+            background: black;
+            outline: none;
+            border: none;
+        }
+    }
+
+    .textbox{
+            width: 40%;
+            min-height: 10rem;
+            background-color: transparent;
+            border: 1px solid #2dda81;
+            border-radius: 0.2rem;
+            padding: 0.5rem;
+            color: #2dda81;
+            font-size: 1.5rem;
+    }
+}
+
+.buttons{
+    display: flex;
+    gap: 2rem;
+    
+    .btn{
+        box-shadow: 1rem 1rem 100rem 1rem #06a854;
+        padding: 0.2rem 1rem;
+        font-size: 2rem;
+        border-radius: 0.2rem;
+        color: #212121;
+        border: none;
+    }
+    .btn-active{
+        background-color: #06a854;
+        cursor: pointer;
+    }
+    .btn-disabled{
+        background-color: #06a8547f;
+        cursor: not-allowed;
+    }
+}
+
+@media screen  and (width < 600px){
+    .title{
+        font-size: 2.5rem;
+    }
+    
+    .description{
+        font-size: 1.5rem;
+    }
+    .main{
+        flex-direction: column;
+        /* justify-content: start; */
+        align-items: start;
+        gap: 4rem 0;
+
+        .textbox{
+            width: 100%;
+            border: none;
+        }
+    }
 }

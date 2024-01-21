@@ -11,5 +11,27 @@
         <h1 class="title">Speech To Text</h1>
         <p class="description">Experience seamless communication with our Text-to-Speech Converter website. Transform written words into spoken language, enhancing accessibility and user engagement effortlessly.</p>
     </header>
+    <main class="main">
+        <div class="btn__box">
+            <div class="language">
+                <select class="select__option" name="lang" id="language" value="">
+                    <option id="lang" name="lang" value="English">English</option>
+                    <option id="lang" name="lang" value="Hindi">Hindi</option>
+                    <option id="lang" name="lang" value="French">French</option>
+                    <!-- <option value="">Tamil</option> -->
+                    <option id="lang" name="lang" value="Spanish">Spanish</option>
+                    <option id="lang" name="lang" value="German">German</option>
+                    <option id="lang" name="lang" value="Arabic">Arabic</option>
+                    <option id="lang" name="lang" value="Italian">Italian</option>
+                </select>
+            </div>
+            <div class="buttons">
+                    <button class="btn btn-active" id="speak_button">Speak</button>
+                    <button class="btn btn-disabled" id="stop_button" disabled>Stop</button>
+            </div>
+        </div>
+        <div class="textbox" id="textOutput" >Your spoken Text</div>
+    </main>
 </body>
+<script src="./main.js"></script>
 </html>

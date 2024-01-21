@@ -1,20 +1,11 @@
-let textInput =  document.querySelector('#textInput');
-let lang = document.querySelector('#language');
-let selectedLanguage = "English"; // default
-let speak = document.querySelector('#speak');
+<h1> Text Reader</h1>
+<p>Reads the written text</p>
 
-lang.addEventListener('click',(e)=>{
-    selectedLanguage = lang.value;
-    textInput.setAttribute('placeholder',`Insert ${lang.value} text...`);
-});
+<h2> Soluiton Code </h3>
 
+<p>SpeakText function Implementation</p>
 
-
-speak.addEventListener('click',(e)=>{
-    console.log(textInput.value);
-    speakText(textInput.value,selectedLanguage);
-});
-
+```javascript
 function speakText(text,lang){
     let languages = {
         "English" : 'en-US',
@@ -35,12 +26,4 @@ function speakText(text,lang){
     // speechSynthesis.resume()
     window.speechSynthesis.speak(speech);
 }
-
-
-(function () {
-    setTimeout(()=>{
-        let speech = new SpeechSynthesisUtterance("Welcome to Text Speaker");
-    speechSynthesis.speak(speech);
-    },2000) 
-})();
-
+```
