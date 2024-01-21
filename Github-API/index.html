@@ -4,69 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Github API - card</title>
-    <style>
-        body{
-            box-sizing: border-box;
-            background-color: #373636;
-            color: #fff;
-            width: 100vw;
-            margin: auto;
-            padding: 1rem;
-            display: flex;
-            flex-direction: column;
-            justify-content: start;
-            align-items: center;
-            overflow-x: hidden;
-        }
-        .heading{
-                font-size: 2rem;
-            }
-        .description{
-                font-size: 1.5rem;
-            }
-        .header{
-            text-align: center;
-        }
-
-        .card__container{
-            display: flex;
-            border: 1px solid white;
-            width: 30vw;
-            padding: .5rem;
-            img{
-                width: 200px;
-                height: 200px;
-                /* border-radius: 100%; */
-            }
-            .card__data{
-                padding: 0 .5rem;
-                display: flex;
-                flex-direction: column;
-                justify-content: space-around;
-                align-items: start;
-                gap: .2rem ;
-            }
-            .name{
-                font-size: 2rem;
-                font-weight: 800;
-            }
-            .username,.bio,.location,.text,.number{
-                font-size: 1.5rem;
-            }
-            button{
-                text-align: center;
-                width: 100%;
-                padding: .5rem 2rem;
-                font-size: 1.5rem;
-                text-transform: capitalize;
-                background: rgb(5, 5, 5);
-                border: none;
-                color: white;
-                border-radius: 0.5rem;
-            }
-        }
-
-    </style>
+    <link rel="stylesheet" href="style.css">
+        
 </head>
 <body>
     <header class="header">
@@ -74,28 +13,33 @@
         <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur quae corrupti quisquam!</p>
     </header>
 
-    <div class="card__container">
-        <img src="https://images.pexels.com/photos/1364756/pexels-photo-1364756.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="img" class="img">
-        <div class="card__data">
-            <div class="name">Dinesh</div>
-            <div class="username">@dineshEth</div>
-            <div id="bio" class="bio">Lorem ipsum dolor sit, amet consectetur adipisicing   elit. Ipsa, laborum.</div>
-            <div class="location">India</div>
-            <div class="repos">
-                <span class="text">Repos:</span>
-                <span class="number">20</span>
-            </div>
-            <div class="followers">
-                <span class="text">followers:</span>
-                <span class="number">2</span>
-            </div>
-            <div class="following">
-                <span class="text">followers : </span>
-                <span class="number">2</span>
-            </div>
-            <button>Visit</button>
+    <div class="box">
+        <div class="circle circle--blue"></div>
+        <div class="circle circle--yellow"></div>
+        <div class="card__container card__container--style">
+            <!-- <img src="https://images.pexels.com/photos/1364756/pexels-photo-1364756.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="img" class="img">
+            <div class="card__data">
+                <div class="name">Dinesh</div>
+                <div class="username">@dineshEth</div>
+                <div id="bio" class="bio">Lorem ipsum dolor sit, amet consectetur adipisicing   elit. Ipsa, laborum.</div>
+                <div class="location">India</div>
+                <div class="repos">
+                    <span class="text">Repos:</span>
+                    <span class="number">20</span>
+                </div>
+                <div class="followers">
+                    <span class="text">followers:</span>
+                    <span class="number">2</span>
+                </div>
+                <div class="following">
+                    <span class="text">followers : </span>
+                    <span class="number">2</span>
+                </div>
+                <button>Visit</button>
+            </div> -->
         </div>
     </div>
+    
 </body>
 <script src="./index.js"></script>
 </html>

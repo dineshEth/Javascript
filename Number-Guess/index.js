@@ -85,17 +85,19 @@ function endGame() {
 
 function newGame() {
     const newGameButton = document.querySelector('#newGame');
-        newGameButton.addEventListener('click',(e)=>{
-        play= true;
-        prevTrail.innerHTML =''
-        displayMessage("")
-        let ele = document.getElementById('container');
-        ele.removeChild(document.querySelector("#lose"));
-        remainingTrails.innerHTML = `${10}`
-        document.querySelector("#userNumber").removeAttribute('disabled');
-        userSubmit.removeAttribute('disabled');
-        prevGuess = [];  
-        randomNumber = Math.floor(Math.random()*100 + 1);
-        newGameButton.remove();
+    newGameButton.addEventListener('click',(e)=>{
+            const win = document.getElementById('win');
+            win.remove();
+            play= true;
+            prevTrail.innerHTML =''
+            displayMessage("")
+            let ele = document.getElementById('container');
+            ele.removeChild(document.querySelector("#lose"));
+            remainingTrails.innerHTML = `${10}`
+            document.querySelector("#userNumber").removeAttribute('disabled');
+            userSubmit.removeAttribute('disabled');
+            prevGuess = [];  
+            randomNumber = Math.floor(Math.random()*100 + 1);
+            newGameButton.remove();
     });
 }
