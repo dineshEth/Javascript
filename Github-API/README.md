@@ -1,16 +1,11 @@
-// Create a new XMLHttpRequest object 
+<h1>Github data</h1>
 
-const requestURL = `https://api.github.com/users/dineshEth`;
-const xhr = new XMLHttpRequest();
+<p>Github Data card</p>
 
-const avatarUrl = document.querySelector('#avatarUrl');
-const username = document.querySelector('#name');
-const bio = document.querySelector('#bio');
-const geoLocation = document.querySelector('#location')
-const repos = document.querySelector('#repos');
-const followers = document.querySelector('#followers');
-const following = document.querySelector('#following');
 
+<h3>Solution code</h3>
+
+```javascript
 // setup a callback function to handle the response
 xhr.onreadystatechange = () =>{
     if(xhr.readyState == XMLHttpRequest.DONE){
@@ -34,4 +29,4 @@ xhr.onreadystatechange = () =>{
 }
 xhr.open('GET',requestURL,true);
 xhr.send()
-
+```
