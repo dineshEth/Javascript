@@ -36,9 +36,9 @@ speakButton.addEventListener('click',(e)=>{
 stopButton.addEventListener('click',(e)=>{
     stopSpeaking(recognition);
     stopButton.setAttribute('disabled','');
-    speakButton.removeAttribute('disabled');
+    // speakButton.removeAttribute('disabled');
     stopButton.classList.replace('btn-active','btn-disabled');
-    speakButton.classList.replace('btn-disabled','btn-active');
+    // speakButton.classList.replace('btn-disabled','btn-active');
     console.log('end')
 });
 
@@ -75,6 +75,10 @@ function result(recognition){
     recognition.onresult = (event) => {
         const transcript = event.results[0][0].transcript;
         textOutput.innerText = `${transcript}`;
+        // stopButton.setAttribute('disabled','');
+        speakButton.removeAttribute('disabled');
+        // stopButton.classList.replace('btn-active','btn-disabled');
+        speakButton.classList.replace('btn-disabled','btn-active');
     };
 }
 
