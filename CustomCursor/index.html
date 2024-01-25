@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse Movement</title>
+    <style>
+        html{
+            cursor: none;    
+        }
+        *{
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            overflow: hidden;
+            width: 100vw;
+            height: 100vh;
+            /* cursor: none; */
+            background-color: #06204b;
+        }
+        .box{
+                width: 150px;
+                height: 150px;
+                background-color: #e5e5e5e9;
+                filter: blur(40px);
+                border-radius: 50%;
+                /* border: 8px solid #da12a4; */
+                /* background: radial-gradient(circle, #0ec918, #0000ff);; */
+                position: absolute;
+                pointer-events: none; /* Ensure that the cursor doesn't interfere with underlying elements */
+                transform: translate(-50%, -50%);
+                transition: transform 0s ease;
+        }
+        
+        .title{
+            font-size: 2rem;
+            color: #da12a4;
+            text-align: center;
+            text-decoration-line:underline;
+        }
+        .desc{
+            font-size: 10em;
+            color: #da12a4;
+            opacity: 0.6;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="cursor" class="box"></div>
+    <h1 class="title">MouseMovement</h1>
+    <p class="desc">Move your cursor</p>
+</body>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+    let cursor = document.querySelector('#cursor');
+    let cursor2 = document.querySelector('#cursor2');
+    document.addEventListener('mousemove', function (e) {
+        let x = e.clientX; // position in X
+        let y = e.clientY; // position in Y
+        cursor.style.transform = `translate(${x-75}px, ${y-75}px)`;
+    });
+    });
+</script>
+</html>
