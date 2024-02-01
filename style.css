@@ -10,24 +10,19 @@
     --text-primary:#E5B8F4;
     --text-secondary:#C147E9;
 }
+html{
+    /* scrollbar-track-color: #03C988; */
+}
 a{
     text-decoration: none;
 }
-/* a .bg-gray{
-    text-decoration-line: none;
-    color: black;
-    display: block;
-    width: 100%;
-} */
+
 ul{
     list-style: none;
 }
 body{
-    /* box-sizing: border-box; */
     background-color: var(--bg-primary);
     color: var(--text-primary);
-    /* width: 100vw; */
-    /* height: 100vh; */
     margin: auto;
 }
 .header,.main{
@@ -35,25 +30,42 @@ body{
 }
 .nav{
     /* padding: 0 1rem; */
+    position: relative;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
 }
-.list{
+.nav__list{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    gap: .3rem 1rem;  
+    gap: .3rem 1rem;
+
+    .list__item{
+        cursor: not-allowed;
+        font-size: 1em;
+        opacity: 0.5;
+    }
 }
 .youtube{
+    display: block;
     color: var(--text-highlight);
     font-size: 1.5rem;
     padding: .5rem;
     border: 1px solid var(--text-highlight);
-    border-radius: 4px;
+    border-radius: 4px; 
 }
+.youtube:hover::after{
+    /* background-color: red; */
+    content: "@dineshTechfi";
+    position: absolute;
+    right: 100px;
+    top: 2px;
+    z-index: 10;
+}
+
 .projects__links{
     display: flex;
     flex-direction: column;
@@ -76,7 +88,15 @@ body{
     /* background-color: #810CA8; */
     /* padding: 4px; */
     .title{
+        display: inline-block;
+        cursor:none;
         font-size: 2em;
+        margin: 1em 0;
+        font-weight: 600;
+        transition:color 2s ease
+    }
+    .title:hover{
+        color: #03C988;
     }
 }
 .card{
@@ -91,9 +111,10 @@ body{
     .card__box{
         display: flex;
         flex-direction: column;
-        width: 350px;
+        /* width: 350px; */
+        width: 30%;
         overflow: hidden;
-        /* padding: 2px 8px; */
+        padding: 8px 8px;
         background-color: var(--bg-secondary);
         border-radius: 4px;
 
@@ -102,6 +123,7 @@ body{
             height: 200px;
             overflow: hidden;
             border-radius: 4px;
+            /* filter: blur(0.5px); */
             img{
                 width: 100%;
                 object-fit: contain;
@@ -115,9 +137,9 @@ body{
         .card__content{
             display: flex;
             flex-direction: column;
-            justify-content: start;
-            align-items: start;
-            padding: 4px 8px;
+            justify-content: space-between;
+            align-items:start;
+            /* padding: 4px 8px; */
             gap:10px;
 
             .card__title{
@@ -145,7 +167,7 @@ body{
                     gap: 0 2px;
                     width: 49%;
                     text-align: center;
-                    font-size: 1.5em;
+                    font-size: 1.6em;
                     color: var(--bg-primary);
                     border-radius: 4px;
                     cursor: pointer;
@@ -157,25 +179,80 @@ body{
 }
 
 .footer{
+    margin-top: 2rem;
     width: 100%;
     background-color: #000;
     min-height: 10rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    align-items: center;
+    padding: 0 2rem;
+
+    .item{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        img{
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
+            border-radius: 50%;
+        }
+        .tag{
+            /* text-align: center; */
+            color: var(--text-primary);
+            font-size: 1.2em;
+        }
+    }
 }
 
 
 /**MEDIA QUERIES**/
 
 @media screen and (width < 510px) {
+    .header,.main{
+        padding:0.5rem;
+    }
     .list{
         display: none;
     }
-}
-@media screen and (width < 900px) {
-    /* .list{
+    .card{
+        .card__box{
+            width: 100%;
+        }
+    }
+    .nav__list{
         display: none;
-    } */
+    }
+    .footer{
+        flex-direction: column;
+        justify-content: start;
+        align-items: start;
+        padding: 2rem;
+        /* margin: auto; */
+
+        .item{
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+
+    }
+}
+@media screen and (512px < width < 900px) {
     .header,.main{
         padding:0.5rem 1rem; 
     }
+    .card{
+        .card__box{
+            width: 48%;
+        }
+    }
+    
 }
 
