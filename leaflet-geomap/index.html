@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""/>
+    <title>LeafLet - GeoMap</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+       body{
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        /* background-color:hsla(36,13%,5%,1);
+        background-image:
+                radial-gradient(at 19% 82%, hsla(240,76%,13%,1) 0px, transparent 50%),
+                radial-gradient(at 59% 13%, hsla(244,82%,20%,1) 0px, transparent 50%),
+                radial-gradient(at 85% 98%, hsla(110,1%,5%,1) 0px, transparent 50%),
+                radial-gradient(at 14% 56%, hsla(281,61%,73%,1) 0px, transparent 50%),
+                radial-gradient(at 91% 16%, hsla(237,75%,39%,1) 0px, transparent 50%),
+                radial-gradient(at 70% 63%, hsla(312,75%,28%,1) 0px, transparent 50%),
+                radial-gradient(at 53% 87%, hsla(210,80%,41%,1) 0px, transparent 50%); */
+       }
+       h1{
+        font-size: 64px;
+        margin: 20px 0;
+       }
+        #map{ 
+            border: 4px solid black;
+            height: 80vh;
+            width: 95%;
+            max-width: 1200px;
+            margin: 0 40px;  
+        }
+        .custom-popup{
+            color:blue;
+            
+        }
+    </style>
+</head>
+<body>
+    <h1>Bagseen Map</h1>
+    <div id="map"></div>
+    <div>Click your favourite location</div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""></script>
+    <script>
+        let map = L.map('map').setView([25.039097, 72.923891], 13);
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+        }).addTo(map);
+
+        // marker on map
+        L.marker([25.039097, 72.923891]).addTo(map);
+
+        // circle marker on map
+        var circle = L.circle([25.039097, 72.923891], {
+            color: 'red',
+            fillColor: '#f03',
+            fillOpacity: 0.5,
+            radius: 2000
+        }).addTo(map);
+
+        // polygon marker on map
+        // var polygon = L.polygon([
+        //     [51.509, -0.08],
+        //     [51.503, -0.06],
+        //     [51.51, -0.047]
+        // ]).addTo(map);
+
+        // popups on map
+        let popup1 = L.popup()
+            .setLatLng([25.039097, 72.923891])   // position
+            .setContent("Bagseen")  // message
+            .openOn(map);     // opens on map
+
+        let popup2 = L.popup({style:{
+            backgroundColor: '#000',
+            color:'#fff',
+            fontSize :'32px'
+        }});
+        popup2.options.className = 'custom-popup';
+        function onMapClick(e) {
+            let marker = L.marker([e.latlng.lat, e.latlng.lng]).addTo(map);
+
+            setTimeout(()=>{
+                marker.remove();
+            },2000)
+
+            // Perform reverse geocoding using OpenStreetMap Nominatim
+            fetch(`https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${e.latlng.lat}&lon=${e.latlng.lng}`)
+            .then(response => response.json())
+            .then(data => {
+                let town = data.display_name;
+                popup2
+                .setLatLng(e.latlng)
+                .setContent(()=>{
+                    return(
+                        town
+                    )
+                })
+                .openOn(map);
+                // console.log(town)
+            });
+            
+            
+            }
+            
+        // click event on map
+        map.on('click', onMapClick);
+
+    </script>
+</body>
+</html>
