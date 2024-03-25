@@ -12,4 +12,4 @@
     <li>Background Changer</li>
 </ul>
 
-[visit here](https://www.google.com)
+[visit here](https://dinesheth.github.io/Javascript)
